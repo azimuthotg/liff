@@ -71,8 +71,12 @@
           await liff.sendMessages([
             {
               "type": "sticker",
-              "stickerId": 1,
-              "packageId": 1
+              "stickerId": "13", // Sticker ID for a smiley face
+              "packageId": "1"
+            },
+            {
+              "type": "text",
+              "text": "สวัสดี"
             }
           ]);
           alert("Message Sent");
