@@ -66,15 +66,22 @@
     }
 
     async function sendMsg() {
-      if(liff.getContext().type !== "none"){
-        await liff.sendMessages([
-          {
-            "type": "sticker",
-            "stickerId" : 1,
-            "packageId" : 1
-          }
-        ])
-        alert("Message Sent")
+      try {
+        if (liff.getContext().type !== "none") {
+          await liff.sendMessages([
+            {
+              "type": "sticker",
+              "stickerId": "1",
+              "packageId": "1"
+            }
+          ]);
+          alert("Message Sent");
+        } else {
+          alert("Cannot send message: Invalid context type.");
+        }
+      } catch (error) {
+        console.error('Error sending message:', error);
+        alert("Error sending message. See console for details.");
       }
     }
 
