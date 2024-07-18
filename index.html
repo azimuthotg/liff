@@ -79,6 +79,8 @@
         const statusMessage = profile.statusMessage ? profile.statusMessage : "No status message";
         document.getElementById("statusMessage").append(statusMessage);
         document.getElementById("displayName").append(profile.displayName);
+        document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+
       } catch (error) {
         console.error('Error getting profile:', error);
       }
